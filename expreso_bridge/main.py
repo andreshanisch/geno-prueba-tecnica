@@ -2,6 +2,7 @@
 
 Uso:
     python -m expreso_bridge.main data/remitos_2026-09-30.json
+    python -m expreso_bridge.main data/remitos_2026-09-30.json --atrasados --hoy 2026-10-03
     
 Configuración por variables de entorno (con valores por defecto para el entorno de prueba):
     EXPRESO_API_URL    URL base de la API    (default: http://localhost:8000)
@@ -10,11 +11,12 @@ Configuración por variables de entorno (con valores por defecto para el entorno
 import argparse
 import os
 import sys
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 import requests
 
+from .atrasados import buscar_atrasados, informar_atrasados
 from .client import CREADO, ERROR, RECHAZADO, ErrorAutenticacion, ExpresoAndinoClient
 from .loader import leer_export, seleccionar_remitos_andino
 from .report import Fila, escribir_csv, escribir_resumen
@@ -24,8 +26,9 @@ API_URL_PRUEBA = "http://localhost:8000"
 API_KEY_PRUEBA = "andino-test-7f3a91"
 
 
-def ejecutar(ruta_export, cliente, carpeta_salida, momento=None):
-    """ Corre el proceso completo y devuelve la lista de filas del resumen."""
+def ejecutar(ruta_export, cliente, carpeta_salida, momento=None, hoy_atrasados=None):
+    """ Corre el proceso completo y devuelve la lista de filas del resumen.
+    Si se pasa hoy_atrasados (una fecha), ademas consulta el estado de los envios cargados y la lista los atrasados a esa fecha."""
     momento = momento or datetime.now()
     lectura = seleccionar_remitos_andino(leer_export(ruta_export))
     provincias = cliente.obtener_provincias()
@@ -57,6 +60,10 @@ def ejecutar(ruta_export, cliente, carpeta_salida, momento=None):
     carpeta.mkdir(parents=True, exist_ok=True)
     escribir_csv(filas, carpeta / "detalle.csv")
     escribir_resumen(filas, lectura, Path(ruta_export).name, momento, carpeta / "resumen.md")
+    if hoy_atrasados:
+        atrasados, no_consultados = buscar_atrasados(cliente, filas, hoy_atrasados)
+        informar_atrasados(atrasados, no_consultados, hoy_atrasados, carpeta)
+        print(f"Envíos atrasados al {hoy_atrasados:%d/%m/%Y}: {len(atrasados)}")
     print(f"Resumen guardado en {carpeta}")
     return filas
 
@@ -65,12 +72,14 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description="Carga en Expreso Andino los remitos del export de LogiSur.")
     parser.add_argument("export", help="Ruta al JSON exportado por LogiSur")
     parser.add_argument("--salida", default="output", help="Carpeta donde guardar el resumen (default: output)")
+    parser.add_argument("--atrasados", action="store_true", help="Además, listar los envíos cargados que están atrasados")
+    parser.add_argument("--hoy", type=date.fromisoformat, default=date.today(), help="Fecha de referencia para los atrasados, AAAA-MM-DD (default: hoy)")
     args = parser.parse_args(argv)
 
     cliente = ExpresoAndinoClient(os.environ.get("EXPRESO_API_URL", API_URL_PRUEBA),
                                   os.environ.get("EXPRESO_API_KEY", API_KEY_PRUEBA))
     try:
-        filas = ejecutar(args.export, cliente, args.salida)
+        filas = ejecutar(args.export, cliente, args.salida, hoy_atrasados=args.hoy if args.atrasados else None)
     except ErrorAutenticacion as exc:
         print(f"ERROR: {exc}. Revisar EXPRESO_API_KEY.", file=sys.stderr)
         return 2
