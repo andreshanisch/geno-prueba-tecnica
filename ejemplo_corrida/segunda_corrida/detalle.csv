@@ -1,0 +1,24 @@
+﻿nro_remito;estado;tracking_id;motivo;destinatario;localidad;intentos
+R-10000466;Ya estaba cargado;ANDC4BD591C;Ya estaba cargado en Expreso Andino;Corralón San Martín;San Miguel de Tucumán;1
+R-10000469;Ya estaba cargado;ANDBC0F442A;Ya estaba cargado en Expreso Andino;Casa de Repuestos Tito;La Plata;1
+R-10000477;Rechazado (corregir datos);;Falta código postal del destinatario;Panadería La Espiga;Pilar;0
+R-10000479;Ya estaba cargado;ANDED024A60;Ya estaba cargado en Expreso Andino;Pinturerías del Oeste;Córdoba;1
+R-10000486;Ya estaba cargado;AND3E68D82C;Ya estaba cargado en Expreso Andino;Distribuidora Lucía;Caballito;1
+R-10000507;Ya estaba cargado;ANDE08AB5D0;Ya estaba cargado en Expreso Andino;Maderera El Pino;Paraná;1
+R-10000513;Ya estaba cargado;AND66DEDF3D;Ya estaba cargado en Expreso Andino;Kiosco El Sol;Córdoba;1
+R-10000516;Rechazado (corregir datos);;Falta dirección del destinatario;Sanitarios Rivera;Caballito;0
+R-10000519;Ya estaba cargado;ANDB617F8CA;Ya estaba cargado en Expreso Andino;Mercado Los Álamos;Villa María;1
+R-10000527;Ya estaba cargado;AND5A8C356E;Ya estaba cargado en Expreso Andino;Librería Central;Mar del Plata;1
+R-10000536;Ya estaba cargado;AND609207E9;Ya estaba cargado en Expreso Andino;Corralón San Martín;Palermo;1
+R-10000541;Rechazado (corregir datos);;Cantidad de bultos inválida: 0 (minimo 1);Carnicería El Gaucho;San Miguel de Tucumán;0
+R-10000548;Ya estaba cargado;AND8E87909B;Ya estaba cargado en Expreso Andino;Veterinaria Patitas;Villa María;1
+R-10000554;Ya estaba cargado;AND07BF7D36;Ya estaba cargado en Expreso Andino;Tienda Sofía;Mar del Plata;1
+R-10000567;Ya estaba cargado;ANDF9B2D380;Ya estaba cargado en Expreso Andino;Corralón San Martín;Palermo;1
+R-10000572;Ya estaba cargado;ANDCCF97549;Ya estaba cargado en Expreso Andino;Ferretería El Tornillo;Rafaela;1
+R-10000582;Ya estaba cargado;ANDE19FF019;Ya estaba cargado en Expreso Andino;Tienda Sofía;Rafaela;1
+R-10000589;Ya estaba cargado;ANDF13BB944;Ya estaba cargado en Expreso Andino;Rotisería Doña Ana;Córdoba;1
+R-10000590;Ya estaba cargado;AND6E6DF578;Ya estaba cargado en Expreso Andino;Carnicería El Gaucho;San Isidro;1
+R-10000612;Ya estaba cargado;ANDA184CDD3;Ya estaba cargado en Expreso Andino;Pinturerías del Oeste;Mar del Plata;1
+R-10000622;Ya estaba cargado;AND2E317D56;Ya estaba cargado en Expreso Andino;Neumáticos Sur;San Miguel de Tucumán;1
+R-10000637;Ya estaba cargado;AND6B4EAA78;Ya estaba cargado en Expreso Andino;Kiosco El Sol;Córdoba;1
+R-10000657;Ya estaba cargado;AND0E7830F9;Ya estaba cargado en Expreso Andino;Vinoteca Malbec;Caballito;1

@@ -1,0 +1,24 @@
+﻿nro_remito;estado;tracking_id;motivo;destinatario;localidad;intentos
+R-10000466;Cargado;ANDC4BD591C;;Corralón San Martín;San Miguel de Tucumán;1
+R-10000469;Cargado;ANDBC0F442A;;Casa de Repuestos Tito;La Plata;1
+R-10000477;Rechazado (corregir datos);;Falta código postal del destinatario;Panadería La Espiga;Pilar;0
+R-10000479;Cargado;ANDED024A60;;Pinturerías del Oeste;Córdoba;1
+R-10000486;Cargado;AND3E68D82C;;Distribuidora Lucía;Caballito;1
+R-10000507;Cargado;ANDE08AB5D0;;Maderera El Pino;Paraná;1
+R-10000513;Cargado;AND66DEDF3D;;Kiosco El Sol;Córdoba;1
+R-10000516;Rechazado (corregir datos);;Falta dirección del destinatario;Sanitarios Rivera;Caballito;0
+R-10000519;Cargado;ANDB617F8CA;;Mercado Los Álamos;Villa María;1
+R-10000527;Ya estaba cargado;AND5A8C356E;Ya estaba cargado en Expreso Andino;Librería Central;Mar del Plata;1
+R-10000536;Cargado;AND609207E9;;Corralón San Martín;Palermo;1
+R-10000541;Rechazado (corregir datos);;Cantidad de bultos inválida: 0 (minimo 1);Carnicería El Gaucho;San Miguel de Tucumán;0
+R-10000548;Cargado;AND8E87909B;;Veterinaria Patitas;Villa María;1
+R-10000554;Cargado;AND07BF7D36;;Tienda Sofía;Mar del Plata;3
+R-10000567;Cargado;ANDF9B2D380;;Corralón San Martín;Palermo;1
+R-10000572;Cargado;ANDCCF97549;;Ferretería El Tornillo;Rafaela;1
+R-10000582;Cargado;ANDE19FF019;;Tienda Sofía;Rafaela;3
+R-10000589;Cargado;ANDF13BB944;;Rotisería Doña Ana;Córdoba;1
+R-10000590;Cargado;AND6E6DF578;;Carnicería El Gaucho;San Isidro;1
+R-10000612;Cargado;ANDA184CDD3;"Creado; confirmado tras reintento (HTTP 500 internal_error)";Pinturerías del Oeste;Mar del Plata;2
+R-10000622;Cargado;AND2E317D56;;Neumáticos Sur;San Miguel de Tucumán;1
+R-10000637;Cargado;AND6B4EAA78;;Kiosco El Sol;Córdoba;1
+R-10000657;Cargado;AND0E7830F9;;Vinoteca Malbec;Caballito;1
