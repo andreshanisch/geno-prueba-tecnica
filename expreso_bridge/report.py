@@ -42,7 +42,7 @@ def escribir_resumen(filas, lectura, archivo_export, momento, ruta):
     a_revisar = [f for f in filas if f.estado in (RECHAZADO, ERROR)]
 
     lineas = [
-        "#Resumen de carga en Expreso Andino",
+        "# Resumen de carga en Expreso Andino",
         "",
         f"- **Archivo:** '{archivo_export}'",
         f"- **Fecha de la corrida:** {momento:%Y-%m-%d %H:%M:%S}",

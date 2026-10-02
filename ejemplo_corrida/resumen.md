@@ -1,4 +1,4 @@
-#Resumen de carga en Expreso Andino
+# Resumen de carga en Expreso Andino
 
 - **Archivo:** 'remitos_2026-09-30.json'
 - **Fecha de la corrida:** 2026-10-02 11:10:00
